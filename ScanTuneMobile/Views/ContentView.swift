@@ -18,6 +18,7 @@ struct ContentView: View {
 
     @State private var selectedTab = 0
     @State private var showLogoutConfirm = false
+    @State private var showOrgConfig = false
 
     init(graphService: GraphService, authService: AuthService) {
         let settings = InventorySettingsStore()
@@ -110,9 +111,36 @@ struct ContentView: View {
             }
 
             Spacer()
-                .frame(height: 40)
+                .frame(height: 24)
+
+            // Entrée discrète : bascule d'organisation (client ID / tenant ID).
+            // Visible uniquement déconnecté, en bas de l'écran de login.
+            orgConfigEntry
         }
         .padding(.horizontal, 32)
+        .sheet(isPresented: $showOrgConfig) {
+            OrganizationConfigView(authService: authService)
+        }
+    }
+
+    /// Bouton discret d'accès à la configuration d'organisation.
+    /// Affiche « Organisation personnalisée » si le tenant n'est pas celui d'usine.
+    private var orgConfigEntry: some View {
+        Button {
+            showOrgConfig = true
+        } label: {
+            VStack(spacing: 2) {
+                Label("Organisation", systemImage: "building.2")
+                    .font(.caption)
+                    .foregroundStyle(.tertiary)
+                if authService.organization.isCustom {
+                    Text("Organisation personnalisée")
+                        .font(.caption2)
+                        .foregroundStyle(.orange)
+                }
+            }
+        }
+        .padding(.bottom, 16)
     }
 
     // MARK: - Authenticated View

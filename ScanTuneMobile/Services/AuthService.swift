@@ -9,10 +9,16 @@ final class AuthService: ObservableObject {
 
     // MARK: - Configuration (même App Registration que Desktop)
 
-    private static let clientId = "6f92a499-4b73-482f-851a-e58bfbdec60d"
-    private static let tenantId = "fc0bfa0c-a170-400a-b053-14db47a1a6a6"
-    private static let authority = "https://login.microsoftonline.com/fc0bfa0c-a170-400a-b053-14db47a1a6a6"
+    /// Redirect URI de l'App (indépendant du tenant, défini dans les entitlements/Info.plist).
     private static let redirectUri = "msauth.com.scantune.mobile://auth"
+
+    /// Identité d'organisation active (client ID + tenant ID). Persistée et modifiable
+    /// via l'écran « Organisation » pour basculer vers un autre tenant sans recompiler.
+    /// Par défaut : la même App Registration que l'application Desktop ScanTune.
+    private let organizationStore: OrganizationConfigStore
+
+    /// Configuration Azure courante, exposée à l'UI (bascule d'organisation).
+    @Published private(set) var organization: OrganizationConfig
 
     /// Scopes : lecture Intune/Entra ID + écriture OneDrive + lecture/écriture SharePoint (fichier d'inventaire partagé)
     /// + lecture des clés de récupération BitLocker.
@@ -41,7 +47,10 @@ final class AuthService: ObservableObject {
 
     // MARK: - Init
 
-    init() {
+    init(organizationStore: OrganizationConfigStore? = nil) {
+        let store = organizationStore ?? OrganizationConfigStore()
+        self.organizationStore = store
+        self.organization = store.config
         initializeClient()
     }
 
@@ -49,10 +58,10 @@ final class AuthService: ObservableObject {
 
     private func initializeClient() {
         do {
-            let authorityURL = try MSALAADAuthority(url: URL(string: Self.authority)!)
+            let authorityURL = try MSALAADAuthority(url: URL(string: organization.authority)!)
 
             let config = MSALPublicClientApplicationConfig(
-                clientId: Self.clientId,
+                clientId: organization.clientId,
                 redirectUri: Self.redirectUri,
                 authority: authorityURL
             )
@@ -61,6 +70,24 @@ final class AuthService: ObservableObject {
         } catch {
             statusMessage = "Erreur d'initialisation MSAL : \(error.localizedDescription)"
         }
+    }
+
+    // MARK: - Organization switch
+
+    /// Bascule l'application vers une autre organisation Azure (client ID + tenant ID).
+    /// Déconnecte proprement le compte du tenant courant, persiste la nouvelle identité,
+    /// puis réinitialise le client MSAL. La prochaine connexion se fera sur le nouveau tenant.
+    func updateOrganization(_ newConfig: OrganizationConfig) async {
+        // Purger le compte et le token en cache du tenant courant avant de basculer,
+        // sinon un identifiant de compte périmé traînerait dans le Keychain.
+        await signOut()
+
+        organizationStore.update(newConfig)
+        organization = newConfig
+        initializeClient()
+
+        AppLog.shared.info("Organisation basculée vers le tenant \(newConfig.tenantId)", category: "auth")
+        statusMessage = "Organisation changée — reconnectez-vous"
     }
 
     // MARK: - Sign In (Interactive)

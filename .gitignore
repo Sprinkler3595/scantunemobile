@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+
+# Xcode
+## User settings
+xcuserdata/
+*.xcuserstate
+
+## Build products
+build/
+DerivedData/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Swift Package Manager
+.build/
+.swiftpm/
+
+## CocoaPods (si utilisé un jour)
+Pods/
+
+## Carthage (si utilisé un jour)
+Carthage/Build/
+
+## fastlane (si utilisé un jour)
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output

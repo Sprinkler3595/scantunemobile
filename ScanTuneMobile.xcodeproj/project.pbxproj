@@ -1,0 +1,538 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10001 /* ScanTuneMobileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10001 /* ScanTuneMobileApp.swift */; };
+		A10002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10002 /* ContentView.swift */; };
+		A10003 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10003 /* ScannerView.swift */; };
+		A10004 /* DeviceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10004 /* DeviceDetailView.swift */; };
+		A10005 /* InventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10005 /* InventoryView.swift */; };
+		A10006 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10006 /* Device.swift */; };
+		A10007 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10007 /* User.swift */; };
+		A10009 /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10009 /* ScannerViewModel.swift */; };
+		A10010 /* DeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10010 /* DeviceViewModel.swift */; };
+		A10011 /* InventoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10011 /* InventoryViewModel.swift */; };
+		A10012 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10012 /* AuthService.swift */; };
+		A10013 /* GraphService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10013 /* GraphService.swift */; };
+		A10014 /* QRScannerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10014 /* QRScannerHelper.swift */; };
+		A10015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B10015 /* Assets.xcassets */; };
+		A10016 /* MSAL in Frameworks */ = {isa = PBXBuildFile; productRef = D10001 /* MSAL */; };
+		A10017 /* QRPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10017 /* QRPayload.swift */; };
+		A10021 /* InventoryRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10021 /* InventoryRecord.swift */; };
+		A10022 /* InventorySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10022 /* InventorySettings.swift */; };
+		A10023 /* SharePointInventoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10023 /* SharePointInventoryService.swift */; };
+		A10024 /* InventoryQueueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10024 /* InventoryQueueStore.swift */; };
+		A10025 /* InventoryCompanyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10025 /* InventoryCompanyView.swift */; };
+		A10026 /* InventoryScanFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10026 /* InventoryScanFormView.swift */; };
+		A10027 /* InventorySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10027 /* InventorySettingsView.swift */; };
+		A10028 /* CompanyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10028 /* CompanyPickerView.swift */; };
+		A10029 /* UserPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10029 /* UserPickerView.swift */; };
+		A10030 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10030 /* Logger.swift */; };
+		A10032 /* AnomalyDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10032 /* AnomalyDetector.swift */; };
+		A10033 /* PDFReportBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10033 /* PDFReportBuilder.swift */; };
+		A10034 /* DeviceSnapshotStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10034 /* DeviceSnapshotStore.swift */; };
+		A10035 /* ManualLookupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10035 /* ManualLookupView.swift */; };
+		A10036 /* AnomaliesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10036 /* AnomaliesView.swift */; };
+		A10037 /* DiagnosticLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10037 /* DiagnosticLogView.swift */; };
+		A10038 /* SharePointBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10038 /* SharePointBrowserView.swift */; };
+		A10099 /* BitLockerKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10099 /* BitLockerKey.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B10000 /* ScanTuneMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScanTuneMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B10001 /* ScanTuneMobileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanTuneMobileApp.swift; sourceTree = "<group>"; };
+		B10002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B10003 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		B10004 /* DeviceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailView.swift; sourceTree = "<group>"; };
+		B10005 /* InventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryView.swift; sourceTree = "<group>"; };
+		B10006 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		B10007 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B10009 /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
+		B10010 /* DeviceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewModel.swift; sourceTree = "<group>"; };
+		B10011 /* InventoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewModel.swift; sourceTree = "<group>"; };
+		B10012 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		B10013 /* GraphService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphService.swift; sourceTree = "<group>"; };
+		B10014 /* QRScannerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerHelper.swift; sourceTree = "<group>"; };
+		B10015 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B10016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B10017 /* QRPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPayload.swift; sourceTree = "<group>"; };
+		B10018 /* ScanTuneMobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScanTuneMobile.entitlements; sourceTree = "<group>"; };
+		B10021 /* InventoryRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryRecord.swift; sourceTree = "<group>"; };
+		B10022 /* InventorySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventorySettings.swift; sourceTree = "<group>"; };
+		B10023 /* SharePointInventoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePointInventoryService.swift; sourceTree = "<group>"; };
+		B10024 /* InventoryQueueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryQueueStore.swift; sourceTree = "<group>"; };
+		B10025 /* InventoryCompanyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryCompanyView.swift; sourceTree = "<group>"; };
+		B10026 /* InventoryScanFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryScanFormView.swift; sourceTree = "<group>"; };
+		B10027 /* InventorySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventorySettingsView.swift; sourceTree = "<group>"; };
+		B10028 /* CompanyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyPickerView.swift; sourceTree = "<group>"; };
+		B10029 /* UserPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPickerView.swift; sourceTree = "<group>"; };
+		B10030 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		B10032 /* AnomalyDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnomalyDetector.swift; sourceTree = "<group>"; };
+		B10033 /* PDFReportBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFReportBuilder.swift; sourceTree = "<group>"; };
+		B10034 /* DeviceSnapshotStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSnapshotStore.swift; sourceTree = "<group>"; };
+		B10035 /* ManualLookupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualLookupView.swift; sourceTree = "<group>"; };
+		B10036 /* AnomaliesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnomaliesView.swift; sourceTree = "<group>"; };
+		B10037 /* DiagnosticLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticLogView.swift; sourceTree = "<group>"; };
+		B10038 /* SharePointBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePointBrowserView.swift; sourceTree = "<group>"; };
+		B10099 /* BitLockerKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitLockerKey.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C10001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10016 /* MSAL in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		G10000 = {
+			isa = PBXGroup;
+			children = (
+				G10001 /* ScanTuneMobile */,
+				G10008 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		G10001 /* ScanTuneMobile */ = {
+			isa = PBXGroup;
+			children = (
+				B10001 /* ScanTuneMobileApp.swift */,
+				B10016 /* Info.plist */,
+				B10018 /* ScanTuneMobile.entitlements */,
+				B10015 /* Assets.xcassets */,
+				G10002 /* Models */,
+				G10003 /* Views */,
+				G10004 /* ViewModels */,
+				G10005 /* Services */,
+				G10006 /* Helpers */,
+			);
+			path = ScanTuneMobile;
+			sourceTree = "<group>";
+		};
+		G10002 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B10006 /* Device.swift */,
+				B10099 /* BitLockerKey.swift */,
+				B10007 /* User.swift */,
+				B10017 /* QRPayload.swift */,
+				B10021 /* InventoryRecord.swift */,
+				B10022 /* InventorySettings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		G10003 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B10002 /* ContentView.swift */,
+				B10003 /* ScannerView.swift */,
+				B10004 /* DeviceDetailView.swift */,
+				B10005 /* InventoryView.swift */,
+				B10025 /* InventoryCompanyView.swift */,
+				B10026 /* InventoryScanFormView.swift */,
+				B10027 /* InventorySettingsView.swift */,
+				B10028 /* CompanyPickerView.swift */,
+				B10029 /* UserPickerView.swift */,
+				B10035 /* ManualLookupView.swift */,
+				B10036 /* AnomaliesView.swift */,
+				B10037 /* DiagnosticLogView.swift */,
+				B10038 /* SharePointBrowserView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		G10004 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B10009 /* ScannerViewModel.swift */,
+				B10010 /* DeviceViewModel.swift */,
+				B10011 /* InventoryViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		G10005 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B10012 /* AuthService.swift */,
+				B10013 /* GraphService.swift */,
+				B10023 /* SharePointInventoryService.swift */,
+				B10024 /* InventoryQueueStore.swift */,
+				B10034 /* DeviceSnapshotStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		G10006 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B10014 /* QRScannerHelper.swift */,
+				B10030 /* Logger.swift */,
+				B10032 /* AnomalyDetector.swift */,
+				B10033 /* PDFReportBuilder.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		G10008 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B10000 /* ScanTuneMobile.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		T10001 /* ScanTuneMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CL10002 /* Build configuration list for PBXNativeTarget "ScanTuneMobile" */;
+			buildPhases = (
+				S10001 /* Sources */,
+				C10001 /* Frameworks */,
+				R10001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScanTuneMobile;
+			packageProductDependencies = (
+				D10001 /* MSAL */,
+			);
+			productName = ScanTuneMobile;
+			productReference = B10000 /* ScanTuneMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		P10001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 2640;
+				TargetAttributes = {
+					T10001 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = CL10001 /* Build configuration list for PBXProject "ScanTuneMobile" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = fr;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				fr,
+				Base,
+			);
+			mainGroup = G10000;
+			packageReferences = (
+				PR10001 /* XCRemoteSwiftPackageReference "microsoft-authentication-library-for-objc" */,
+			);
+			productRefGroup = G10008 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				T10001 /* ScanTuneMobile */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		R10001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10015 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		S10001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10001 /* ScanTuneMobileApp.swift in Sources */,
+				A10002 /* ContentView.swift in Sources */,
+				A10003 /* ScannerView.swift in Sources */,
+				A10004 /* DeviceDetailView.swift in Sources */,
+				A10005 /* InventoryView.swift in Sources */,
+				A10006 /* Device.swift in Sources */,
+				A10099 /* BitLockerKey.swift in Sources */,
+				A10007 /* User.swift in Sources */,
+				A10009 /* ScannerViewModel.swift in Sources */,
+				A10010 /* DeviceViewModel.swift in Sources */,
+				A10011 /* InventoryViewModel.swift in Sources */,
+				A10012 /* AuthService.swift in Sources */,
+				A10013 /* GraphService.swift in Sources */,
+				A10014 /* QRScannerHelper.swift in Sources */,
+				A10017 /* QRPayload.swift in Sources */,
+				A10021 /* InventoryRecord.swift in Sources */,
+				A10022 /* InventorySettings.swift in Sources */,
+				A10023 /* SharePointInventoryService.swift in Sources */,
+				A10024 /* InventoryQueueStore.swift in Sources */,
+				A10025 /* InventoryCompanyView.swift in Sources */,
+				A10026 /* InventoryScanFormView.swift in Sources */,
+				A10027 /* InventorySettingsView.swift in Sources */,
+				A10028 /* CompanyPickerView.swift in Sources */,
+				A10029 /* UserPickerView.swift in Sources */,
+				A10030 /* Logger.swift in Sources */,
+				A10032 /* AnomalyDetector.swift in Sources */,
+				A10033 /* PDFReportBuilder.swift in Sources */,
+				A10034 /* DeviceSnapshotStore.swift in Sources */,
+				A10035 /* ManualLookupView.swift in Sources */,
+				A10036 /* AnomaliesView.swift in Sources */,
+				A10037 /* DiagnosticLogView.swift in Sources */,
+				A10038 /* SharePointBrowserView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BC10001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 74DPA5FHC9;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BC10002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 74DPA5FHC9;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC10003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ScanTuneMobile/ScanTuneMobile.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 74DPA5FHC9;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ScanTuneMobile/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "ScanTune Mobile";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scantune.mobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		BC10004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ScanTuneMobile/ScanTuneMobile.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 74DPA5FHC9;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ScanTuneMobile/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "ScanTune Mobile";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scantune.mobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CL10001 /* Build configuration list for PBXProject "ScanTuneMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC10001 /* Debug */,
+				BC10002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CL10002 /* Build configuration list for PBXNativeTarget "ScanTuneMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC10003 /* Debug */,
+				BC10004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		PR10001 /* XCRemoteSwiftPackageReference "microsoft-authentication-library-for-objc" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AzureAD/microsoft-authentication-library-for-objc";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D10001 /* MSAL */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = PR10001 /* XCRemoteSwiftPackageReference "microsoft-authentication-library-for-objc" */;
+			productName = MSAL;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = P10001 /* Project object */;
+}

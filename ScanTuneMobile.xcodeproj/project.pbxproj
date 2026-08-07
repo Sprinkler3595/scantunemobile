@@ -41,6 +41,8 @@
 		A10037 /* DiagnosticLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10037 /* DiagnosticLogView.swift */; };
 		A10038 /* SharePointBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10038 /* SharePointBrowserView.swift */; };
 		A10099 /* BitLockerKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10099 /* BitLockerKey.swift */; };
+		A10040 /* OrganizationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10040 /* OrganizationConfig.swift */; };
+		A10041 /* OrganizationConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10041 /* OrganizationConfigView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,8 @@
 		B10037 /* DiagnosticLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticLogView.swift; sourceTree = "<group>"; };
 		B10038 /* SharePointBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePointBrowserView.swift; sourceTree = "<group>"; };
 		B10099 /* BitLockerKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitLockerKey.swift; sourceTree = "<group>"; };
+		B10040 /* OrganizationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationConfig.swift; sourceTree = "<group>"; };
+		B10041 /* OrganizationConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationConfigView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 				B10017 /* QRPayload.swift */,
 				B10021 /* InventoryRecord.swift */,
 				B10022 /* InventorySettings.swift */,
+				B10040 /* OrganizationConfig.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 				B10036 /* AnomaliesView.swift */,
 				B10037 /* DiagnosticLogView.swift */,
 				B10038 /* SharePointBrowserView.swift */,
+				B10041 /* OrganizationConfigView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -299,6 +305,8 @@
 				A10036 /* AnomaliesView.swift in Sources */,
 				A10037 /* DiagnosticLogView.swift in Sources */,
 				A10038 /* SharePointBrowserView.swift in Sources */,
+				A10040 /* OrganizationConfig.swift in Sources */,
+				A10041 /* OrganizationConfigView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -41,6 +41,8 @@
 		A10037 /* DiagnosticLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10037 /* DiagnosticLogView.swift */; };
 		A10038 /* SharePointBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10038 /* SharePointBrowserView.swift */; };
 		A10099 /* BitLockerKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10099 /* BitLockerKey.swift */; };
+		A10039 /* TenantConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10039 /* TenantConfiguration.swift */; };
+		A10040 /* TenantSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10040 /* TenantSettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,8 @@
 		B10037 /* DiagnosticLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticLogView.swift; sourceTree = "<group>"; };
 		B10038 /* SharePointBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePointBrowserView.swift; sourceTree = "<group>"; };
 		B10099 /* BitLockerKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitLockerKey.swift; sourceTree = "<group>"; };
+		B10039 /* TenantConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenantConfiguration.swift; sourceTree = "<group>"; };
+		B10040 /* TenantSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenantSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 				B10017 /* QRPayload.swift */,
 				B10021 /* InventoryRecord.swift */,
 				B10022 /* InventorySettings.swift */,
+				B10039 /* TenantConfiguration.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 				B10036 /* AnomaliesView.swift */,
 				B10037 /* DiagnosticLogView.swift */,
 				B10038 /* SharePointBrowserView.swift */,
+				B10040 /* TenantSettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -299,6 +305,8 @@
 				A10036 /* AnomaliesView.swift in Sources */,
 				A10037 /* DiagnosticLogView.swift in Sources */,
 				A10038 /* SharePointBrowserView.swift in Sources */,
+				A10039 /* TenantConfiguration.swift in Sources */,
+				A10040 /* TenantSettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

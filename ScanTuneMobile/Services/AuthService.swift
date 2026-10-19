@@ -7,12 +7,11 @@ import MSAL
 @MainActor
 final class AuthService: ObservableObject {
 
-    // MARK: - Configuration (même App Registration que Desktop)
+    // MARK: - Configuration
 
-    private static let clientId = "6f92a499-4b73-482f-851a-e58bfbdec60d"
-    private static let tenantId = "fc0bfa0c-a170-400a-b053-14db47a1a6a6"
-    private static let authority = "https://login.microsoftonline.com/fc0bfa0c-a170-400a-b053-14db47a1a6a6"
-    private static let redirectUri = "msauth.com.scantune.mobile://auth"
+    /// Tenant et App Registration utilisés pour la connexion (voir `TenantConfiguration`).
+    /// Modifiables depuis l'écran de connexion via `updateTenantConfiguration(_:)`.
+    @Published private(set) var tenantConfiguration: TenantConfiguration
 
     /// Scopes : lecture Intune/Entra ID + écriture OneDrive + lecture/écriture SharePoint (fichier d'inventaire partagé)
     /// + lecture des clés de récupération BitLocker.
@@ -38,22 +37,30 @@ final class AuthService: ObservableObject {
     // MARK: - Private
 
     private var msalApplication: MSALPublicClientApplication?
+    private let tenantStore: TenantConfigurationStore
 
     // MARK: - Init
 
-    init() {
+    init(tenantStore: TenantConfigurationStore = TenantConfigurationStore()) {
+        self.tenantStore = tenantStore
+        self.tenantConfiguration = tenantStore.load()
         initializeClient()
     }
 
     // MARK: - Client initialization
 
     private func initializeClient() {
+        msalApplication = nil
         do {
-            let authorityURL = try MSALAADAuthority(url: URL(string: Self.authority)!)
+            guard let url = URL(string: tenantConfiguration.authority) else {
+                statusMessage = "Tenant invalide : \(tenantConfiguration.tenantId)"
+                return
+            }
+            let authorityURL = try MSALAADAuthority(url: url)
 
             let config = MSALPublicClientApplicationConfig(
-                clientId: Self.clientId,
-                redirectUri: Self.redirectUri,
+                clientId: tenantConfiguration.clientId,
+                redirectUri: TenantConfiguration.redirectUri,
                 authority: authorityURL
             )
 
@@ -61,6 +68,34 @@ final class AuthService: ObservableObject {
         } catch {
             statusMessage = "Erreur d'initialisation MSAL : \(error.localizedDescription)"
         }
+    }
+
+    // MARK: - Tenant
+
+    /// Change le tenant (et/ou l'App Registration) de connexion.
+    /// Uniquement hors session : les comptes MSAL en cache de l'ancien tenant sont
+    /// supprimés puis le client MSAL est recréé sur la nouvelle autorité.
+    /// La prochaine connexion sera interactive.
+    func updateTenantConfiguration(_ newConfiguration: TenantConfiguration) {
+        guard !isAuthenticated else { return }
+        let configuration = newConfiguration.normalized
+        guard configuration.isValid, configuration != tenantConfiguration else { return }
+
+        // Purger les comptes de l'ancien tenant pour éviter qu'un login silencieux
+        // ne réutilise un compte qui n'appartient pas au nouveau tenant.
+        if let application = msalApplication,
+           let accounts = try? application.allAccounts() {
+            for account in accounts {
+                try? application.remove(account)
+            }
+        }
+        clearAccountIdentifier()
+
+        tenantStore.save(configuration)
+        tenantConfiguration = configuration
+        statusMessage = "Déconnecté"
+        initializeClient()
+        AppLog.shared.info("Tenant de connexion changé : \(configuration.tenantId)", category: "auth")
     }
 
     // MARK: - Sign In (Interactive)

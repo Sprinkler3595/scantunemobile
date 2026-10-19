@@ -118,14 +118,23 @@ Dans Xcode :
 
 ## Configuration
 
-L'authentification Azure AD est configuree dans `AuthService.swift` :
+### Tenant de connexion
 
-```swift
-private static let clientId = "<votre-client-id>"
-private static let tenantId = "<votre-tenant-id>"
-private static let authority = "https://login.microsoftonline.com/<votre-tenant-id>"
-private static let redirectUri = "msauth.com.scantune.mobile://auth"
-```
+Le tenant Microsoft Entra ID et l'App Registration sont configurables directement dans l'app :
+sur l'ecran de connexion, toucher la ligne **Tenant : ...** en bas de l'ecran, puis renseigner :
+
+- **Tenant** : ID du tenant (GUID) ou domaine verifie (ex: `contoso.onmicrosoft.com`)
+- **Client ID** : Application ID de l'App Registration dans ce tenant
+
+La configuration est conservee sur l'appareil (y compris apres deconnexion). Changer de tenant
+purge les comptes MSAL en cache : la connexion suivante est interactive. Pour changer de tenant
+une fois connecte, se deconnecter d'abord.
+
+L'App Registration du tenant cible doit declarer le redirect URI `msauth.com.scantune.mobile://auth`
+et disposer des permissions Graph listees ci-dessus (avec consentement admin).
+
+Les valeurs par defaut (tenant d'origine) sont definies dans `TenantConfiguration.defaults`
+(`ScanTuneMobile/Models/TenantConfiguration.swift`).
 
 ## Securite
 

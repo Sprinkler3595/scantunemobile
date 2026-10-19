@@ -18,6 +18,7 @@ struct ContentView: View {
 
     @State private var selectedTab = 0
     @State private var showLogoutConfirm = false
+    @State private var showTenantSettings = false
 
     init(graphService: GraphService, authService: AuthService) {
         let settings = InventorySettingsStore()
@@ -110,9 +111,32 @@ struct ContentView: View {
             }
 
             Spacer()
-                .frame(height: 40)
+
+            tenantButton
+                .padding(.bottom, 24)
         }
         .padding(.horizontal, 32)
+        .sheet(isPresented: $showTenantSettings) {
+            TenantSettingsView()
+        }
+    }
+
+    /// Tenant courant + accès à sa configuration.
+    private var tenantButton: some View {
+        Button {
+            showTenantSettings = true
+        } label: {
+            HStack(spacing: 6) {
+                Image(systemName: "building.2")
+                Text("Tenant : \(authService.tenantConfiguration.tenantId)")
+                    .lineLimit(1)
+                    .truncationMode(.middle)
+                Image(systemName: "gearshape")
+            }
+            .font(.caption)
+            .foregroundStyle(.secondary)
+        }
+        .disabled(authService.isLoading)
     }
 
     // MARK: - Authenticated View
